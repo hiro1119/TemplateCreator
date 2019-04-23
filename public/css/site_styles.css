@@ -4,3 +4,23 @@
     display: flex;
     flex-wrap: wrap;
 }
+.table-bottom-border
+{
+    width: 100%;
+}
+.table-bottom-border td, .table-bottom-border th
+{
+    padding: 5px 20px 5px 5px;
+    vertical-align: top;
+}.table-bottom-border tr
+{
+    border-bottom: 1px solid #ddd;
+}
+.table-bottom-border th
+{
+    width: 40%;
+}
+.table-bottom-border td
+{
+    width: 60%;
+}

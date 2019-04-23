@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use DOMDocument;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HomeController extends Controller
 {
@@ -127,6 +128,36 @@ class HomeController extends Controller
             }
         }
         Log::debug(print_r($data,true));
+        
+        $reader = Excel::load(base_path().'/dist/'.$data['path'].'/site_infos/site_info.xlsx');
+        if ($reader == null)
+        {
+            throw new \Exception('error.');
+        }
+        // ファイル内のシートの枚数によって $reader->all() が返すオブジェクトのクラスが異なる
+        if (preg_match('/SheetCollection$/', get_class($reader->all())))
+        {
+            // シートが複数ある場合
+            $sheet = $reader->first();
+        }
+        else if (preg_match('/RowCollection$/', get_class($reader->all())))
+        {
+            // シートが1枚の場合
+            $sheet = $reader;
+        }
+        else
+        {
+            throw new \Exception('error.');
+        }
+
+        $site_infos = [];
+        foreach ($sheet->all() as $cells)
+        {
+            $site_infos[] = $cells->all();
+        }
+        $headers = array_keys($site_infos[0]);
+        Log::debug(print_r($headers,true));
+        return view('detail', compact('data','site_infos','headers'));
 
     }
 }

@@ -32,7 +32,7 @@
                             <td>{{$row['name']}}</td>
                             <td>{{$row['path']}}</td>
                             <td>
-                            <a class="btn btn-xs btn-info" href="{{route('project.info', $row['id'])}}">開く</a></td>
+                            <a class="btn btn-xs btn-info" href="{{route('project.info', $row['id'])}}">Oren</a></td>
                             </tr>
                         @endforeach
                         </tbody>
