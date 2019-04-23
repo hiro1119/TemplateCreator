@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sites>
+  <info>
+    <id>sample1</id>
+    <name>sample</name>
+    <path>sample</path>
+    <temps>
+      <temp-name>_template_ele.html</temp-name>
+      <temp-name>_template_gas.html</temp-name>
+    </temps>
+  </info>
+  <info>
+    <id>sample21</id>
+    <name>あああああああ</name>
+    <path>sample2</path>
+    <temps>
+      <temp-name>_template_net.html</temp-name>
+      <temp-name>_template_mobile.html</temp-name>
+    </temps>
+  </info>
+  <info>
+    <id>sample31</id>
+    <name>ええええエエ</name>
+    <path>sample3</path>
+    <temps>
+      <temp-name>template_a.html</temp-name>
+    </temps>
+  </info>
+</sites>

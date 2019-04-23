@@ -1,0 +1,109 @@
+<?php include( $_SERVER['SITE_BASE'].'/lib/Redirection.class.php' ); ?>
+<!DOCTYPE html>
+<html lang="ja" class="is-nojs">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="index,follow">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="description" content="J:COM（ジェイコム）のオフィシャルサイト。ジェイコムなら、ケーブルテレビ（CS、BS、地デジ）やインターネット、格安スマホ、電話、電気、など、多彩なサービスで暮らしをもっと楽しく便利にします。">
+	<meta name="keywords" content="ケーブルテレビ（CATV） J:COM,ケーブルテレビ,インターネット,プロバイダー,電力,電気,光ハイブリッド,固定電話,IP電話,株式会社ジュピターテレコム,J:COM,ジェイコム,J-COM,JCOM">
+	<meta property="og:title" content="dummy">
+	<meta property="og:description" content="J:COM（ジェイコム）のオフィシャルサイト。ジェイコムなら、ケーブルテレビ（CS、BS、地デジ）やインターネット、格安スマホ、電話、電気、など、多彩なサービスで暮らしをもっと楽しく便利にします。">
+	<meta property="og:site_name" content="J:COM（ジェイコム）のオフィシャルサイト">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="dummy">
+	<meta property="og:image" content="https://www.jcom.co.jp/resources/images/ogp.png">
+	<title>モバイル配下ページテンプレート</title>
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<?php include($_SERVER['DOCUMENT_ROOT']. '/resources/include/resource_head.html'); ?>
+	<?php include($_SERVER['DOCUMENT_ROOT']. '/resources/include/html_head.html'); ?>
+</head>
+<body>
+	<div class="l-wrapper">
+		<?php include($_SERVER['DOCUMENT_ROOT']. '/resources/include/header.html'); ?>
+
+
+		<main class="l-content" role="main">
+			<div class="l-contentHead">
+				<div class="l-contentHead__inner">
+					<?php include($_SERVER['DOCUMENT_ROOT']. '/resources/include/nav/nav_mobile.html'); ?>
+				<!-- /.l-contentHead__inner --></div>
+			<!-- /.l-contentHead --></div>
+
+			<div class="l-contentBody m-mt-0">
+				<div class="l-contentBody__inner">
+					<div class="l-contentMain">
+						<div class="m-section" data-margin="true">
+							<div class="m-hdg-01">
+								<h1 class="m-hdg m-txtClr-mobile">h1タイトル入ります</h1>
+							</div>
+						<!-- /.m-section --></div>
+					<!-- /.l-contentMain --></div>
+				<!-- /.l-contentBody__inner --></div>
+
+				<div class="l-contentBody__inner">
+					<div class="l-contentMain">
+
+						<div class="m-section" data-margin="true">
+							コンテンツ入ります
+						</div>
+
+						<div class="m-box-otherservice">
+							<dl class="m-box-otherserviceList">
+								<dt>その他のサービス</dt>
+								<dd>
+									<ul class="m-box-otherserviceList-link">
+										<li><a class="m-link-arrow" href="/service/tv/">J:COM TV (テレビ)</a></li>
+										<li><a class="m-link-arrow" href="/service/net/">J:COM NET (インターネット)</a></li>
+										<li><a class="m-link-arrow" href="/service/mobile/">J:COM MOBILE (モバイル)</a></li>
+										<li><a class="m-link-arrow" href="/service/electricity/">J:COM 電力</a></li>
+										<li><a class="m-link-arrow" href="/service/gas/">J:COM ガス</a></li>
+										<li><a class="m-link-arrow" href="/service/omakase/">おまかせサポート</a></li>
+									</ul>
+								</dd>
+								<dd class="m-service-list">
+									<a class="m-link-arrow" href="/service/">サービス一覧</a>
+								</dd>
+							</dl>
+						<!-- /.m-box-otherservice --></div>
+						<?php include($_SERVER['DOCUMENT_ROOT']. '/resources/include/footer_note.html'); ?>
+					<!-- /.l-contentMain --></div>
+
+					<aside class="l-contentSub" role="complementary">
+						<?php include($_SERVER['DOCUMENT_ROOT']. '/resources/include/side.html'); ?>
+					<!-- /.l-contentSub --></aside>
+
+				<!-- /.l-contentBody__inner --></div>
+			<!-- /.l-contentBody --></div>
+
+			<div class="l-contentFoot">
+				<div class="l-contentFoot__inner">
+					<ol class="m-navBreadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+						<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+						<a href="/" itemprop="item"><span itemprop="name">ホーム</span></a>
+						<meta itemprop="position" content="1"><span>&gt;</span></li>
+						<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+						<a href="dummy" itemprop="item"><span itemprop="name">第二階層第二階層第二階層</span></a>
+						<meta itemprop="position" content="2"><span>&gt;</span></li>
+						<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+						<span itemprop="name" aria-current="page">第三階層第三階層第三階層第三階層第三階層第三階層第三階層第三階層</span>
+						<meta itemprop="position" content="3"></li>
+					<!-- /.m-navBreadcrumb --></ol>
+				<!-- /.l-contentFoot__inner --></div>
+			<!-- /.l-contentFoot --></div>
+		<!-- /.l-content --></main>
+
+
+		<?php include($_SERVER['DOCUMENT_ROOT']. '/resources/include/footer.html'); ?>
+	<!-- /.l-wrapper --></div>
+
+
+	<?php include($_SERVER['DOCUMENT_ROOT']. '/resources/include/resource_foot.html'); ?>
+	<?php include($_SERVER['DOCUMENT_ROOT']. '/resources/include/analysis.html'); ?>
+</body>
+
+</html>

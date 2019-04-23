@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sites>
+  <info>
+    <name>sample２</name>
+    <path>/sample2</path>
+    <temps>
+      <temp-name>template_c.html</temp-name>
+      <temp-name>template_a.html</temp-name>
+      <temp-name>_template_phone.html</temp-name>
+    </temps>
+  </info>
+</sites>

@@ -1,0 +1,6 @@
+
+.row-same-height
+{
+    display: flex;
+    flex-wrap: wrap;
+}
