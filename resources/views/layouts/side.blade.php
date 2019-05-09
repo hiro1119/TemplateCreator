@@ -2,7 +2,7 @@
 <div class="col-md-3 left_col menu_fixed">
   <div class="left_col scroll-view">
   <div class="navbar nav_title" style="border: 0;">
-    <a href="index.html" class="site_title"><span>Template Creator!!</span></a>
+    <a href="{{url('/')}}" class="site_title"><span>Template Creator!!</span></a>
   </div>
 
     <div class="clearfix"></div>
@@ -14,7 +14,7 @@
       <div class="menu_section">
         <h3>Menu</h3>
         <ul class="nav side-menu">
-          <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a></li>
           <!-- <li><a href="#"><i class="fa fa-dashboard"></i> 工数管理</a></li>
           <li><a href="#"><i class="fa fa-tasks"></i> 案件管理</a></li> -->
         </ul>

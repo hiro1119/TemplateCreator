@@ -2,28 +2,33 @@
 <sites>
   <info>
     <id>sample1</id>
-    <name>sample</name>
+    <name>量産化テスト</name>
     <path>sample</path>
     <temps>
       <temp-name>_template_ele.html</temp-name>
       <temp-name>_template_gas.html</temp-name>
+      <temp-name>_template_mobile.html</temp-name>
+      <temp-name>_template_net.html</temp-name>
+      <temp-name>_template_other.html</temp-name>
+      <temp-name>_template_phone.html</temp-name>
+      <temp-name>_template_service.html</temp-name>
+      <temp-name>_template_tv.html</temp-name>
     </temps>
   </info>
   <info>
     <id>sample21</id>
-    <name>あああああああ</name>
+    <name>量産化テスト２</name>
     <path>sample2</path>
+    <outpath>/Users/hirotake.nakamura/Desktop</outpath>
     <temps>
-      <temp-name>_template_net.html</temp-name>
+      <temp-name>_template_ele.html</temp-name>
+      <temp-name>_template_gas.html</temp-name>
       <temp-name>_template_mobile.html</temp-name>
-    </temps>
-  </info>
-  <info>
-    <id>sample31</id>
-    <name>ええええエエ</name>
-    <path>sample3</path>
-    <temps>
-      <temp-name>template_a.html</temp-name>
+      <temp-name>_template_net.html</temp-name>
+      <temp-name>_template_other.html</temp-name>
+      <temp-name>_template_phone.html</temp-name>
+      <temp-name>_template_service.html</temp-name>
+      <temp-name>_template_tv.html</temp-name>
     </temps>
   </info>
 </sites>

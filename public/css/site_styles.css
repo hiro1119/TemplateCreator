@@ -24,3 +24,11 @@
 {
     width: 60%;
 }
+.site-info-table td
+{
+    white-space: nowrap;
+}
+.site-info-table
+{
+    overflow: auto;
+}
