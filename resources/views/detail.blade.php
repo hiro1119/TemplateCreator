@@ -39,6 +39,32 @@
       </div>
     </div>
   </div>
+  <div class="col-md-8 col-sm-8 col-xs-12">
+    <div class="x_panel">
+      <form action="{{route('project.getModules', $id)}}" method="POST" class="form-horizontal">
+        @csrf
+        @method('POST')
+
+      <div class="x_title">
+        <h2>モジュール読み込み</h2>
+        <div class="nav navbar-right">
+            <button type="submit" class="btn btn-xs btn-success">Module Load</button>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label class="control-label" for="name">モジュールURL <span class="required">*</span></label>
+              </div>
+              <div class="form-group">
+                  <textarea name="module-url" required="required" style="width: 100%;" rows="10"></textarea>
+              </div>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
   <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
       <div class="x_title">
@@ -125,36 +151,6 @@
   </div>
 </div>
 
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <form action="{{route('project.moduleup', $id)}}" method="post" data-parsley-validate class="form-horizontal form-label-left">
-                @csrf
-                @method('POST')
-
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Module Up</h4>
-            </div>
-            <div class="modal-body">
-                <div id="temp1" class="module-box">
-                    <label for="fullname">Module ID * :</label>
-                    <input type="text" id="id" class="form-control" name="modules[id][]" required />
-
-                    <label for="module">Module :</label>
-                    <textarea id="module" required="required" rows="10" class="form-control" name="modules[module][]" placeholder="モジュールのタグを貼り付けてください。"></textarea>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button id="add-module" type="button" class="btn btn-dark">Add Module</button>
-                <button type="submit" class="btn btn-primary">Up Module</button>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
 
 @endsection
 

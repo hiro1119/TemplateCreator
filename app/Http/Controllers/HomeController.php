@@ -418,4 +418,31 @@ class HomeController extends Controller
 
         return $site_infos;
     }
+    
+    function getModules(Request $request, $id)
+    {
+      
+      //対象URL取得
+      $geturl = $_POST{'module-url'};
+
+      if($geturl != ""){
+          // HTMLソース取得
+          $html = file_get_contents($geturl);
+          if($html != ""){
+              $domDocument = new DOMDocument();
+              libxml_use_internal_errors( true );
+              $domDocument->loadHTML($html);
+              libxml_clear_errors();
+              $xmlString = $domDocument->saveXML();
+              $xmlObject = simplexml_load_string($xmlString);
+              $array = json_decode(json_encode($xmlObject), true);
+              var_dump($array);
+              $info_msg = "ファイルの取得に成功しました";
+          }else{
+              $info_msg = "ファイルの取得に失敗しました";
+          }
+      }else{
+          $info_msg = "取得対象URLを入力して下さい";
+      }
+    }
 }

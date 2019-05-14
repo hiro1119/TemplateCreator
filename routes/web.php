@@ -17,3 +17,4 @@ Route::get('/project/module/{id}', 'HomeController@module')->name('project.modul
 Route::post('/project/moduleup/{id}', 'HomeController@moduleUp')->name('project.moduleup');
 Route::get('/project/info/{id}', 'HomeController@projectInfo')->name('project.info');
 Route::get('/project/output/{id}', 'HomeController@outPutFiles')->name('project.output');
+Route::post('/project/get-modules/{id}', 'HomeController@getModules')->name('project.getModules');
