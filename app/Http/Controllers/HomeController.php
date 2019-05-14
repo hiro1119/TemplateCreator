@@ -188,9 +188,7 @@ class HomeController extends Controller
                 continue;
             }
             $tempFile = $tempFolder.$s['layout'];
-            Log::debug(print_r('No: '.$k,true));
-            Log::debug(print_r($tempFile,true));
-            Log::debug(print_r(file_exists($tempFile),true));
+
             if (file_exists($tempFile)) {
                 $feed = file($tempFile);
                 foreach($feed as $col){
@@ -226,95 +224,31 @@ class HomeController extends Controller
                         $col = str_replace('<!-- title_h1 -->',$s['title_h1'],$col);
                         array_push($pages,$col);
                     } else if(preg_match('<!-- contents -->',$f)){
-                        Log::debug(print_r('################## contents #################',true));
-                        Log::debug(print_r('################## $ms #################',true));
-                        Log::debug(print_r($ms,true));
-                        foreach($ms as $l){
-                            Log::debug(print_r('################## foreach($ms as $l) #################',true));
-                            Log::debug(print_r('################## $s[$l] #################'.$s[$l],true));
-                            if(isset($s[$l])){
-                                Log::debug(print_r('################## if(isset($s[$l])) #################',true));
-                                $module_datas = json_decode($s[$l],true);
-                                Log::debug(print_r('################## json_decode #################',true));
-                                Log::debug(print_r($s[$l],true));
-                                Log::debug(print_r($module_datas,true));
 
+                        foreach($ms as $l){
+
+                            if(isset($s[$l])){
+
+                                $module_datas = json_decode($s[$l],true);
                                 $moduleId = $module_datas['id'];
+                                if($moduleId === 'HDG-1'){
+                                    continue;
+                                }
                                 if(isset($module_datas['datas'])){
                                     $moduleDatas = $module_datas['datas'];
                                 } else {
                                     $moduleDatas = array();
                                 }
-                                Log::debug(print_r('################## moduleDatas #################',true));
-                                Log::debug(print_r($moduleDatas,true));
+
                                 $modurl = base_path().'/dist/'.$data['path'].'/modules/'.$moduleId.'.xml';
                                 if (file_exists($modurl)) {
                                     $mods = file($modurl);
                                     foreach ($mods as $m) {
                                         if(count($moduleDatas) > 0 && isset($moduleDatas[0]['data1'])){
-                                            Log::debug(print_r('################## count($moduleDatas) > 0 && isset($moduleDatas #################',true));
                                             $m = str_replace('<!-- data1 -->', $moduleDatas[0]['data1'], $m);
                                         }
                                         $p = str_replace(array("\r\n", "\r", "\n"), '', $m);
                                         array_push($pages, $p);
-                                        // if (preg_match('<!-- text -->', $m)) {
-                                        //     switch (true) {
-                                        //         case preg_match('/LINK/', $moduleId):
-                                        //             Log::debug(print_r('################## LINK #################', true));
-                                        //             $links = $module_datas['datas']['links'];
-
-                                        //             foreach ($links as $link) {
-                                        //                 Log::debug(print_r($link, true));
-                                        //                 $p = str_replace('<!-- text -->', $link['text'], $m);
-                                        //                 $p = str_replace('<!-- arrow-color -->', $link['arrow-color'], $p);
-                                        //                 if ($link['type'] === 'target') {
-                                        //                     $p = str_replace('<!-- target -->', 'target="_blank"', $p);
-                                        //                 } elseif ($link['type'] === 'pdf') {
-                                        //                     $p = str_replace('<!-- pdf -->', 'm-pdf', $p);
-                                        //                     $p = str_replace('<!-- target -->', 'target="_blank"', $p);
-                                        //                 } else {
-                                        //                     $p = str_replace('<!-- pdf -->', '', $p);
-                                        //                     $p = str_replace('<!-- target -->', '', $p);
-                                        //                 }
-                                        //                 $p = str_replace(array("\r\n", "\r", "\n"), '', $p);
-                                        //                 array_push($pages, $p);
-                                        //             }
-                                        //             break;
-                                        //         case preg_match('/LIST/', $moduleId):
-                                        //             Log::debug(print_r('################## LIST #################', true));
-                                        //             break;
-                                        //         case preg_match('/TXT/', $moduleId):
-                                        //             Log::debug(print_r('################## TXT #################', true));
-                                        //             break;
-                                        //         case preg_match('/HDG/', $moduleId):
-                                        //             Log::debug(print_r('################## HDG #################', true));
-                                        //             break;
-                                        //         case preg_match('/ANC/', $moduleId):
-                                        //             Log::debug(print_r('################## ANC #################', true));
-                                        //             break;
-                                        //         case preg_match('/BOX/', $moduleId):
-                                        //             Log::debug(print_r('################## BOX #################', true));
-                                        //             break;
-                                        //         case preg_match('/BTN/', $moduleId):
-                                        //             Log::debug(print_r('################## BTN #################', true));
-                                        //             break;
-                                        //         case preg_match('/FT/', $moduleId):
-                                        //             Log::debug(print_r('################## BTN #################', true));
-                                        //             break;
-                                        //         case preg_match('/MED/', $moduleId):
-                                        //             Log::debug(print_r('################## BTN #################', true));
-                                        //             break;
-                                        //         case preg_match('/QA/', $moduleId):
-                                        //             Log::debug(print_r('################## BTN #################', true));
-                                        //             break;
-                                        //         case preg_match('/TBL/', $moduleId):
-                                        //             Log::debug(print_r('################## BTN #################', true));
-                                        //             break;
-                                        //     }
-                                        // } else {
-                                        //     $p = str_replace(array("\r\n", "\r", "\n"), '', $m);
-                                        //     array_push($pages, $m);
-                                        // }
                                     }
                                 } else {
                                     Log::debug(print_r('################## file_exists false #################',true));
@@ -332,16 +266,18 @@ class HomeController extends Controller
             }
             $a = substr($s['path'],0,mb_strrpos($s['path'], "/"));
 
-            $outputpath = base_path().'/dist/'.$data['path'].'/publish'.$a;
-            if (!\File::exists($outputpath)) {
-                \File::makeDirectory($outputpath, 0777, true);
+            // $outputpath = base_path().'/dist/'.$data['path'].'/publish'.$a;
+            $outputpath = pathinfo($data['outpath'].$s['path']);
+            Log::debug(print_r($outputpath['dirname'],true));
+            if (!\File::exists($outputpath['dirname'])) {
+                \File::makeDirectory($outputpath['dirname'], 0777, true);
             }
 
             // 出力ファイルパス
-            $outputpath = base_path().'/dist/'.$data['path'].'/publish'.$s['path'];
+            // $outputpath = base_path().'/dist/'.$data['path'].'/publish'.$s['path'];
             // 取得したデータをファイルに出力する
             $pages = implode(PHP_EOL, $pages);
-            file_put_contents($outputpath, $pages);
+            file_put_contents($data['outpath'].$s['path'], $pages);
         }
 
         // return view('detail', compact('data','site_infos','headers','id'));
@@ -426,26 +362,27 @@ class HomeController extends Controller
     private function getSitemap($data)
     {
 
-        $reader = Excel::load(base_path().'/dist/'.$data['path'].'/site_infos/site_info.xlsx');
+        $reader = Excel::selectSheets('projects')->load(base_path().'/dist/'.$data['path'].'/site_infos/site_info.xlsx');
         if ($reader == null)
         {
             throw new \Exception('error.');
         }
+        $sheet = $reader;
         // ファイル内のシートの枚数によって $reader->all() が返すオブジェクトのクラスが異なる
-        if (preg_match('/SheetCollection$/', get_class($reader->all())))
-        {
-            // シートが複数ある場合
-            $sheet = $reader->first();
-        }
-        else if (preg_match('/RowCollection$/', get_class($reader->all())))
-        {
-            // シートが1枚の場合
-            $sheet = $reader;
-        }
-        else
-        {
-            throw new \Exception('error.');
-        }
+        // if (preg_match('/SheetCollection$/', get_class($reader->all())))
+        // {
+        //     // シートが複数ある場合
+        //     $sheet = $reader->first();
+        // }
+        // else if (preg_match('/RowCollection$/', get_class($reader->all())))
+        // {
+        //     // シートが1枚の場合
+        //     $sheet = $reader;
+        // }
+        // else
+        // {
+        //     throw new \Exception('error.');
+        // }
 
         $head;
         $site_infos = array();

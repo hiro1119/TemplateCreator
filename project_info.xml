@@ -19,7 +19,7 @@
     <id>sample21</id>
     <name>量産化テスト２</name>
     <path>sample2</path>
-    <outpath>/Users/hirotake.nakamura/Desktop</outpath>
+    <outpath>/Applications/MAMP/htdocs/jcom/alfa/html/test</outpath>
     <temps>
       <temp-name>_template_ele.html</temp-name>
       <temp-name>_template_gas.html</temp-name>
