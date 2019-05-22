@@ -1,32 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sites>
   <info>
-    <id>sample1</id>
-    <name>量産化テスト</name>
-    <path>sample</path>
+    <id>jcom_renewal1</id>
+    <name>JCOM量産化</name>
+    <path>jcom_renewal</path>
+    <outpath>/Applications/MAMP/htdocs/jcom/alfa/html</outpath>
     <temps>
       <temp-name>_template_ele.html</temp-name>
       <temp-name>_template_gas.html</temp-name>
+      <temp-name>_template_mdu.html</temp-name>
       <temp-name>_template_mobile.html</temp-name>
       <temp-name>_template_net.html</temp-name>
-      <temp-name>_template_other.html</temp-name>
       <temp-name>_template_phone.html</temp-name>
-      <temp-name>_template_service.html</temp-name>
-      <temp-name>_template_tv.html</temp-name>
-    </temps>
-  </info>
-  <info>
-    <id>sample21</id>
-    <name>量産化テスト２</name>
-    <path>sample2</path>
-    <outpath>/Applications/MAMP/htdocs/jcom/alfa/html/test</outpath>
-    <temps>
-      <temp-name>_template_ele.html</temp-name>
-      <temp-name>_template_gas.html</temp-name>
-      <temp-name>_template_mobile.html</temp-name>
-      <temp-name>_template_net.html</temp-name>
       <temp-name>_template_other.html</temp-name>
-      <temp-name>_template_phone.html</temp-name>
+      <temp-name>_template_sdu.html</temp-name>
       <temp-name>_template_service.html</temp-name>
       <temp-name>_template_tv.html</temp-name>
     </temps>

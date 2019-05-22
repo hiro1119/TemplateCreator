@@ -69,14 +69,14 @@
                             <small>※ フォルダ名のみ記載してください。</small>
                         </div>
                     </div>
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="path">出力先 <span class="required">*</span>
                         </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input type="text" id="path" name="project[outpath]" placeholder="" required="required" class="form-control col-md-7 col-xs-12">
+                            <input type="text" id="outpath" name="project[outpath]" placeholder="" required="required" class="form-control col-md-7 col-xs-12">
                             <small>※ 出力先のディレクトリを記載してください。</small>
                         </div>
-                    </div> -->
+                    </div>
                     <div id="temp#" class="form-group group-temp">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12 input-label-temp" for="template1">テンプレート </label>
                         <div class="col-md-9 col-sm-9 col-xs-12 input-form-temp">

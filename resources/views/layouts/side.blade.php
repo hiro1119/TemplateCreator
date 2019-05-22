@@ -15,6 +15,15 @@
         <h3>Menu</h3>
         <ul class="nav side-menu">
           <li><a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a></li>
+        <li><a><i class="fa fa-book"></i> Documents <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+            <li><a href="{{route('docs.new')}}">新規作成</a></li>
+            <li><a href="{{route('docs.modup')}}">モジュール読み込み（URL指定）</a></li>
+            <li><a href="{{route('docs.modinput')}}">モジュール読み込み（入力）</a></li>
+            <li><a href="{{route('docs.siteinfo')}}">サイト情報作成</a></li>
+            <li><a href="{{route('docs.new')}}">ファイル吐き出し</a></li>
+        </ul>
+        </li>
           <!-- <li><a href="#"><i class="fa fa-dashboard"></i> 工数管理</a></li>
           <li><a href="#"><i class="fa fa-tasks"></i> 案件管理</a></li> -->
         </ul>
